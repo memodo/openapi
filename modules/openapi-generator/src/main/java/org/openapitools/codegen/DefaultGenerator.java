@@ -308,7 +308,7 @@ public class DefaultGenerator implements Generator {
             for (Map.Entry<String, List<CodegenOperation>> entry : paths.entrySet()) {
                 for (CodegenOperation op : entry.getValue()) {
                     Boolean hasETag = op.responseHeaders.stream().anyMatch(h -> h.name == "ETag");
-                    if ( op.returnBaseType.equals(schemaName) && hasETag) {
+                    if (schemaName!= null && op.returnBaseType!=null && op.returnBaseType.equals(schemaName) && hasETag) {
                         Schema etag = new StringSchema();
                         etag.setType("string");
                         schema.getValue().addProperty("etag", etag);
