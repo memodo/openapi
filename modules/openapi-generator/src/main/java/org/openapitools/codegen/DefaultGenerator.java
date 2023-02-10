@@ -26,6 +26,7 @@ import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.media.Schema;
+import io.swagger.v3.oas.models.media.StringSchema;
 import io.swagger.v3.oas.models.parameters.Parameter;
 import io.swagger.v3.oas.models.security.*;
 import io.swagger.v3.oas.models.tags.Tag;
@@ -270,6 +271,7 @@ public class DefaultGenerator implements Generator {
         }
 
         config.preprocessOpenAPI(openAPI);
+        setETag(openAPI, config);
 
         // set OpenAPI to make these available to all methods
         config.setOpenAPI(openAPI);
@@ -293,6 +295,27 @@ public class DefaultGenerator implements Generator {
             basePath = removeTrailingSlash(basePathWithoutHost);
         } else {
             basePath = removeTrailingSlash(config.escapeText(URLPathUtils.getHost(openAPI, config.serverVariableOverrides())));
+        }
+    }
+
+    private void setETag(OpenAPI openAPI, CodegenConfig config) {
+        Map<String, Schema> schemas = new HashMap<>(openAPI.getComponents().getSchemas());
+        Map<String, List<CodegenOperation>> paths = processPaths(this.openAPI.getPaths());
+
+        for (Map.Entry<String, Schema> schema : schemas.entrySet()) {
+            String schemaName = schema.getKey();
+
+            for (Map.Entry<String, List<CodegenOperation>> entry : paths.entrySet()) {
+                for (CodegenOperation op : entry.getValue()) {
+                    Boolean hasETag = op.responseHeaders.stream().anyMatch(h -> h.name == "ETag");
+                    if ( op.returnBaseType.equals(schemaName) && hasETag) {
+                        Schema etag = new StringSchema();
+                        etag.setType("string");
+                        schema.getValue().addProperty("etag", etag);
+                    }
+                 
+                }
+            }
         }
     }
 

@@ -14,6 +14,8 @@ mkdir -p "${maven_cache_repo}"
 docker run --rm -it \
         -w /gen \
         -e GEN_DIR=/gen \
+        -p 5005:5005 \
+        -e JAVA_OPTS=" -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005" \
         -e MAVEN_CONFIG=/var/maven/.m2 \
         -e MAVEN_OPTS="-Dhttps.protocols=TLSv1.2 -Dmaven.repo.local=/var/maven/.m2/repository -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true -Djava.awt.headless=true -Djacoco.skip=true" \
         -u "$(id -u):$(id -g)" \
