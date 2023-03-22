@@ -33,8 +33,23 @@ import jakarta.annotation.Generated;
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
 public class Cat extends Animal {
 
-  @JsonProperty("declawed")
   private Boolean declawed;
+
+  /**
+   * Default constructor
+   * @deprecated Use {@link Cat#Cat(String)}
+   */
+  @Deprecated
+  public Cat() {
+    super();
+  }
+
+  /**
+   * Constructor with only required parameters
+   */
+  public Cat(String className) {
+    super(className);
+  }
 
   public Cat declawed(Boolean declawed) {
     this.declawed = declawed;
@@ -46,6 +61,7 @@ public class Cat extends Animal {
    * @return declawed
   */
   
+  @JsonProperty("declawed")
   public Boolean getDeclawed() {
     return declawed;
   }
