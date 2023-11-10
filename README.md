@@ -24,6 +24,22 @@ After completition, you'll find the jar in:
 
 copy and replace the one in the FE repository.
 
+# How to make some changes in the code
+Remeber that you always need to rebuild after a change in the code!
+
+Usually what you should do, after a change is:
+
+```./run-in-docker.sh mvn package -DskipTests```
+
+and to test your fresh build:
+
+```./run-in-docker.sh generate -i http://host.docker.internal:8080/customer/swagger -g typescript-angular --log-to-stderr --minimal-update --global-property models```
+
+If maven is having errors at any point, cleaning its local cache may help:
+
+```./run-in-docker.sh mvn clean install -U -DskipTests```
+
+
 # How to debug
 
 read the comments in
