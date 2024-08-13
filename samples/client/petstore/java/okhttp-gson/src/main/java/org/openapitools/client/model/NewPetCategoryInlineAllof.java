@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * NewPetCategoryInlineAllof
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0-SNAPSHOT")
 public class NewPetCategoryInlineAllof {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -68,20 +68,18 @@ public class NewPetCategoryInlineAllof {
   }
 
   public NewPetCategoryInlineAllof id(Long id) {
-    
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public Long getId() {
     return id;
   }
-
 
   public void setId(Long id) {
     this.id = id;
@@ -89,20 +87,18 @@ public class NewPetCategoryInlineAllof {
 
 
   public NewPetCategoryInlineAllof name(String name) {
-    
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
-
 
   public void setName(String name) {
     this.name = name;
@@ -110,20 +106,18 @@ public class NewPetCategoryInlineAllof {
 
 
   public NewPetCategoryInlineAllof categoryTag(NewPetCategoryInlineAllofAllOfCategoryTag categoryTag) {
-    
     this.categoryTag = categoryTag;
     return this;
   }
 
-   /**
+  /**
    * Get categoryTag
    * @return categoryTag
-  **/
+   */
   @javax.annotation.Nullable
   public NewPetCategoryInlineAllofAllOfCategoryTag getCategoryTag() {
     return categoryTag;
   }
-
 
   public void setCategoryTag(NewPetCategoryInlineAllofAllOfCategoryTag categoryTag) {
     this.categoryTag = categoryTag;
@@ -234,12 +228,12 @@ public class NewPetCategoryInlineAllof {
     openapiRequiredFields.add("name");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to NewPetCategoryInlineAllof
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to NewPetCategoryInlineAllof
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!NewPetCategoryInlineAllof.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -291,7 +285,12 @@ public class NewPetCategoryInlineAllof {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -330,22 +329,22 @@ public class NewPetCategoryInlineAllof {
     }
   }
 
- /**
-  * Create an instance of NewPetCategoryInlineAllof given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of NewPetCategoryInlineAllof
-  * @throws IOException if the JSON string is invalid with respect to NewPetCategoryInlineAllof
-  */
+  /**
+   * Create an instance of NewPetCategoryInlineAllof given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of NewPetCategoryInlineAllof
+   * @throws IOException if the JSON string is invalid with respect to NewPetCategoryInlineAllof
+   */
   public static NewPetCategoryInlineAllof fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, NewPetCategoryInlineAllof.class);
   }
 
- /**
-  * Convert an instance of NewPetCategoryInlineAllof to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of NewPetCategoryInlineAllof to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

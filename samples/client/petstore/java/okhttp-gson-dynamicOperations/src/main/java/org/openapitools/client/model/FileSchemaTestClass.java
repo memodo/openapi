@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * FileSchemaTestClass
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0-SNAPSHOT")
 public class FileSchemaTestClass {
   public static final String SERIALIZED_NAME_FILE = "file";
   @SerializedName(SERIALIZED_NAME_FILE)
@@ -60,26 +60,24 @@ public class FileSchemaTestClass {
 
   public static final String SERIALIZED_NAME_FILES = "files";
   @SerializedName(SERIALIZED_NAME_FILES)
-  private List<ModelFile> files;
+  private List<ModelFile> files = new ArrayList<>();
 
   public FileSchemaTestClass() {
   }
 
   public FileSchemaTestClass _file(ModelFile _file) {
-    
     this._file = _file;
     return this;
   }
 
-   /**
+  /**
    * Get _file
    * @return _file
-  **/
+   */
   @javax.annotation.Nullable
   public ModelFile getFile() {
     return _file;
   }
-
 
   public void setFile(ModelFile _file) {
     this._file = _file;
@@ -87,7 +85,6 @@ public class FileSchemaTestClass {
 
 
   public FileSchemaTestClass files(List<ModelFile> files) {
-    
     this.files = files;
     return this;
   }
@@ -100,15 +97,14 @@ public class FileSchemaTestClass {
     return this;
   }
 
-   /**
+  /**
    * Get files
    * @return files
-  **/
+   */
   @javax.annotation.Nullable
   public List<ModelFile> getFiles() {
     return files;
   }
-
 
   public void setFiles(List<ModelFile> files) {
     this.files = files;
@@ -169,12 +165,12 @@ public class FileSchemaTestClass {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FileSchemaTestClass
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FileSchemaTestClass
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FileSchemaTestClass.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -239,22 +235,22 @@ public class FileSchemaTestClass {
     }
   }
 
- /**
-  * Create an instance of FileSchemaTestClass given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FileSchemaTestClass
-  * @throws IOException if the JSON string is invalid with respect to FileSchemaTestClass
-  */
+  /**
+   * Create an instance of FileSchemaTestClass given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FileSchemaTestClass
+   * @throws IOException if the JSON string is invalid with respect to FileSchemaTestClass
+   */
   public static FileSchemaTestClass fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FileSchemaTestClass.class);
   }
 
- /**
-  * Convert an instance of FileSchemaTestClass to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FileSchemaTestClass to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

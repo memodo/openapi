@@ -57,7 +57,7 @@ import org.openapitools.client.JSON;
 /**
  * NullableClass
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0-SNAPSHOT")
 public class NullableClass {
   public static final String SERIALIZED_NAME_INTEGER_PROP = "integer_prop";
   @SerializedName(SERIALIZED_NAME_INTEGER_PROP)
@@ -93,7 +93,7 @@ public class NullableClass {
 
   public static final String SERIALIZED_NAME_ARRAY_ITEMS_NULLABLE = "array_items_nullable";
   @SerializedName(SERIALIZED_NAME_ARRAY_ITEMS_NULLABLE)
-  private List<Object> arrayItemsNullable;
+  private List<Object> arrayItemsNullable = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OBJECT_NULLABLE_PROP = "object_nullable_prop";
   @SerializedName(SERIALIZED_NAME_OBJECT_NULLABLE_PROP)
@@ -111,20 +111,18 @@ public class NullableClass {
   }
 
   public NullableClass integerProp(Integer integerProp) {
-    
     this.integerProp = integerProp;
     return this;
   }
 
-   /**
+  /**
    * Get integerProp
    * @return integerProp
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getIntegerProp() {
     return integerProp;
   }
-
 
   public void setIntegerProp(Integer integerProp) {
     this.integerProp = integerProp;
@@ -132,20 +130,18 @@ public class NullableClass {
 
 
   public NullableClass numberProp(BigDecimal numberProp) {
-    
     this.numberProp = numberProp;
     return this;
   }
 
-   /**
+  /**
    * Get numberProp
    * @return numberProp
-  **/
+   */
   @javax.annotation.Nullable
   public BigDecimal getNumberProp() {
     return numberProp;
   }
-
 
   public void setNumberProp(BigDecimal numberProp) {
     this.numberProp = numberProp;
@@ -153,20 +149,18 @@ public class NullableClass {
 
 
   public NullableClass booleanProp(Boolean booleanProp) {
-    
     this.booleanProp = booleanProp;
     return this;
   }
 
-   /**
+  /**
    * Get booleanProp
    * @return booleanProp
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getBooleanProp() {
     return booleanProp;
   }
-
 
   public void setBooleanProp(Boolean booleanProp) {
     this.booleanProp = booleanProp;
@@ -174,20 +168,18 @@ public class NullableClass {
 
 
   public NullableClass stringProp(String stringProp) {
-    
     this.stringProp = stringProp;
     return this;
   }
 
-   /**
+  /**
    * Get stringProp
    * @return stringProp
-  **/
+   */
   @javax.annotation.Nullable
   public String getStringProp() {
     return stringProp;
   }
-
 
   public void setStringProp(String stringProp) {
     this.stringProp = stringProp;
@@ -195,20 +187,18 @@ public class NullableClass {
 
 
   public NullableClass dateProp(LocalDate dateProp) {
-    
     this.dateProp = dateProp;
     return this;
   }
 
-   /**
+  /**
    * Get dateProp
    * @return dateProp
-  **/
+   */
   @javax.annotation.Nullable
   public LocalDate getDateProp() {
     return dateProp;
   }
-
 
   public void setDateProp(LocalDate dateProp) {
     this.dateProp = dateProp;
@@ -216,20 +206,18 @@ public class NullableClass {
 
 
   public NullableClass datetimeProp(OffsetDateTime datetimeProp) {
-    
     this.datetimeProp = datetimeProp;
     return this;
   }
 
-   /**
+  /**
    * Get datetimeProp
    * @return datetimeProp
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDatetimeProp() {
     return datetimeProp;
   }
-
 
   public void setDatetimeProp(OffsetDateTime datetimeProp) {
     this.datetimeProp = datetimeProp;
@@ -237,7 +225,6 @@ public class NullableClass {
 
 
   public NullableClass arrayNullableProp(List<Object> arrayNullableProp) {
-    
     this.arrayNullableProp = arrayNullableProp;
     return this;
   }
@@ -250,15 +237,14 @@ public class NullableClass {
     return this;
   }
 
-   /**
+  /**
    * Get arrayNullableProp
    * @return arrayNullableProp
-  **/
+   */
   @javax.annotation.Nullable
   public List<Object> getArrayNullableProp() {
     return arrayNullableProp;
   }
-
 
   public void setArrayNullableProp(List<Object> arrayNullableProp) {
     this.arrayNullableProp = arrayNullableProp;
@@ -266,7 +252,6 @@ public class NullableClass {
 
 
   public NullableClass arrayAndItemsNullableProp(List<Object> arrayAndItemsNullableProp) {
-    
     this.arrayAndItemsNullableProp = arrayAndItemsNullableProp;
     return this;
   }
@@ -279,15 +264,14 @@ public class NullableClass {
     return this;
   }
 
-   /**
+  /**
    * Get arrayAndItemsNullableProp
    * @return arrayAndItemsNullableProp
-  **/
+   */
   @javax.annotation.Nullable
   public List<Object> getArrayAndItemsNullableProp() {
     return arrayAndItemsNullableProp;
   }
-
 
   public void setArrayAndItemsNullableProp(List<Object> arrayAndItemsNullableProp) {
     this.arrayAndItemsNullableProp = arrayAndItemsNullableProp;
@@ -295,7 +279,6 @@ public class NullableClass {
 
 
   public NullableClass arrayItemsNullable(List<Object> arrayItemsNullable) {
-    
     this.arrayItemsNullable = arrayItemsNullable;
     return this;
   }
@@ -308,15 +291,14 @@ public class NullableClass {
     return this;
   }
 
-   /**
+  /**
    * Get arrayItemsNullable
    * @return arrayItemsNullable
-  **/
+   */
   @javax.annotation.Nullable
   public List<Object> getArrayItemsNullable() {
     return arrayItemsNullable;
   }
-
 
   public void setArrayItemsNullable(List<Object> arrayItemsNullable) {
     this.arrayItemsNullable = arrayItemsNullable;
@@ -324,7 +306,6 @@ public class NullableClass {
 
 
   public NullableClass objectNullableProp(Map<String, Object> objectNullableProp) {
-    
     this.objectNullableProp = objectNullableProp;
     return this;
   }
@@ -337,15 +318,14 @@ public class NullableClass {
     return this;
   }
 
-   /**
+  /**
    * Get objectNullableProp
    * @return objectNullableProp
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getObjectNullableProp() {
     return objectNullableProp;
   }
-
 
   public void setObjectNullableProp(Map<String, Object> objectNullableProp) {
     this.objectNullableProp = objectNullableProp;
@@ -353,7 +333,6 @@ public class NullableClass {
 
 
   public NullableClass objectAndItemsNullableProp(Map<String, Object> objectAndItemsNullableProp) {
-    
     this.objectAndItemsNullableProp = objectAndItemsNullableProp;
     return this;
   }
@@ -366,15 +345,14 @@ public class NullableClass {
     return this;
   }
 
-   /**
+  /**
    * Get objectAndItemsNullableProp
    * @return objectAndItemsNullableProp
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getObjectAndItemsNullableProp() {
     return objectAndItemsNullableProp;
   }
-
 
   public void setObjectAndItemsNullableProp(Map<String, Object> objectAndItemsNullableProp) {
     this.objectAndItemsNullableProp = objectAndItemsNullableProp;
@@ -382,7 +360,6 @@ public class NullableClass {
 
 
   public NullableClass objectItemsNullable(Map<String, Object> objectItemsNullable) {
-    
     this.objectItemsNullable = objectItemsNullable;
     return this;
   }
@@ -395,15 +372,14 @@ public class NullableClass {
     return this;
   }
 
-   /**
+  /**
    * Get objectItemsNullable
    * @return objectItemsNullable
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getObjectItemsNullable() {
     return objectItemsNullable;
   }
-
 
   public void setObjectItemsNullable(Map<String, Object> objectItemsNullable) {
     this.objectItemsNullable = objectItemsNullable;
@@ -551,12 +527,12 @@ public class NullableClass {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to NullableClass
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to NullableClass
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!NullableClass.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -609,7 +585,12 @@ public class NullableClass {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -648,22 +629,22 @@ public class NullableClass {
     }
   }
 
- /**
-  * Create an instance of NullableClass given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of NullableClass
-  * @throws IOException if the JSON string is invalid with respect to NullableClass
-  */
+  /**
+   * Create an instance of NullableClass given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of NullableClass
+   * @throws IOException if the JSON string is invalid with respect to NullableClass
+   */
   public static NullableClass fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, NullableClass.class);
   }
 
- /**
-  * Convert an instance of NullableClass to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of NullableClass to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * SpecialModelName
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0-SNAPSHOT")
 public class SpecialModelName {
   public static final String SERIALIZED_NAME_$_SPECIAL_PROPERTY_NAME = "$special[property.name]";
   @SerializedName(SERIALIZED_NAME_$_SPECIAL_PROPERTY_NAME)
@@ -63,20 +63,18 @@ public class SpecialModelName {
   }
 
   public SpecialModelName $specialPropertyName(Long $specialPropertyName) {
-    
     this.$specialPropertyName = $specialPropertyName;
     return this;
   }
 
-   /**
+  /**
    * Get $specialPropertyName
    * @return $specialPropertyName
-  **/
+   */
   @javax.annotation.Nullable
   public Long get$SpecialPropertyName() {
     return $specialPropertyName;
   }
-
 
   public void set$SpecialPropertyName(Long $specialPropertyName) {
     this.$specialPropertyName = $specialPropertyName;
@@ -84,20 +82,18 @@ public class SpecialModelName {
 
 
   public SpecialModelName specialModelName(String specialModelName) {
-    
     this.specialModelName = specialModelName;
     return this;
   }
 
-   /**
+  /**
    * Get specialModelName
    * @return specialModelName
-  **/
+   */
   @javax.annotation.Nullable
   public String getSpecialModelName() {
     return specialModelName;
   }
-
 
   public void setSpecialModelName(String specialModelName) {
     this.specialModelName = specialModelName;
@@ -204,12 +200,12 @@ public class SpecialModelName {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SpecialModelName
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SpecialModelName
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SpecialModelName.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -250,7 +246,12 @@ public class SpecialModelName {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -289,22 +290,22 @@ public class SpecialModelName {
     }
   }
 
- /**
-  * Create an instance of SpecialModelName given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SpecialModelName
-  * @throws IOException if the JSON string is invalid with respect to SpecialModelName
-  */
+  /**
+   * Create an instance of SpecialModelName given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SpecialModelName
+   * @throws IOException if the JSON string is invalid with respect to SpecialModelName
+   */
   public static SpecialModelName fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SpecialModelName.class);
   }
 
- /**
-  * Convert an instance of SpecialModelName to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SpecialModelName to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

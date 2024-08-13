@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * SomeObj
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0-SNAPSHOT")
 public class SomeObj implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -59,7 +59,7 @@ public class SomeObj implements Serializable {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    SOMEOBJIDENTIFIER("SomeObjIdentifier");
+    SOME_OBJ_IDENTIFIER("SomeObjIdentifier");
 
     private String value;
 
@@ -97,11 +97,16 @@ public class SomeObj implements Serializable {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_$_TYPE = "$_type";
   @SerializedName(SERIALIZED_NAME_$_TYPE)
-  private TypeEnum $type = TypeEnum.SOMEOBJIDENTIFIER;
+  private TypeEnum $type = TypeEnum.SOME_OBJ_IDENTIFIER;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -123,20 +128,18 @@ public class SomeObj implements Serializable {
   }
 
   public SomeObj $type(TypeEnum $type) {
-    
     this.$type = $type;
     return this;
   }
 
-   /**
+  /**
    * Get $type
    * @return $type
-  **/
+   */
   @javax.annotation.Nullable
   public TypeEnum get$Type() {
     return $type;
   }
-
 
   public void set$Type(TypeEnum $type) {
     this.$type = $type;
@@ -144,20 +147,18 @@ public class SomeObj implements Serializable {
 
 
   public SomeObj id(Long id) {
-    
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public Long getId() {
     return id;
   }
-
 
   public void setId(Long id) {
     this.id = id;
@@ -165,20 +166,18 @@ public class SomeObj implements Serializable {
 
 
   public SomeObj name(String name) {
-    
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
-
 
   public void setName(String name) {
     this.name = name;
@@ -186,20 +185,18 @@ public class SomeObj implements Serializable {
 
 
   public SomeObj active(Boolean active) {
-    
     this.active = active;
     return this;
   }
 
-   /**
+  /**
    * Get active
    * @return active
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getActive() {
     return active;
   }
-
 
   public void setActive(Boolean active) {
     this.active = active;
@@ -207,20 +204,18 @@ public class SomeObj implements Serializable {
 
 
   public SomeObj type(String type) {
-    
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   public String getType() {
     return type;
   }
-
 
   public void setType(String type) {
     this.type = type;
@@ -290,12 +285,12 @@ public class SomeObj implements Serializable {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SomeObj
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SomeObj
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SomeObj.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -313,6 +308,10 @@ public class SomeObj implements Serializable {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("$_type") != null && !jsonObj.get("$_type").isJsonNull()) && !jsonObj.get("$_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `$_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("$_type").toString()));
+      }
+      // validate the optional field `$_type`
+      if (jsonObj.get("$_type") != null && !jsonObj.get("$_type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("$_type"));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
@@ -351,22 +350,22 @@ public class SomeObj implements Serializable {
     }
   }
 
- /**
-  * Create an instance of SomeObj given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SomeObj
-  * @throws IOException if the JSON string is invalid with respect to SomeObj
-  */
+  /**
+   * Create an instance of SomeObj given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SomeObj
+   * @throws IOException if the JSON string is invalid with respect to SomeObj
+   */
   public static SomeObj fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SomeObj.class);
   }
 
- /**
-  * Convert an instance of SomeObj to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SomeObj to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

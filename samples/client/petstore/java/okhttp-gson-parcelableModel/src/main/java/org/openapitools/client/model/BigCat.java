@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * BigCat
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0-SNAPSHOT")
 public class BigCat extends Cat implements Parcelable {
   /**
    * Gets or Sets kind
@@ -103,6 +103,11 @@ public class BigCat extends Cat implements Parcelable {
         return KindEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      KindEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_KIND = "kind";
@@ -115,20 +120,18 @@ public class BigCat extends Cat implements Parcelable {
   }
 
   public BigCat kind(KindEnum kind) {
-    
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * Get kind
    * @return kind
-  **/
+   */
   @javax.annotation.Nullable
   public KindEnum getKind() {
     return kind;
   }
-
 
   public void setKind(KindEnum kind) {
     this.kind = kind;
@@ -215,12 +218,12 @@ public class BigCat extends Cat implements Parcelable {
     openapiRequiredFields.add("className");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to BigCat
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BigCat
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BigCat.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -273,22 +276,22 @@ public class BigCat extends Cat implements Parcelable {
     }
   }
 
- /**
-  * Create an instance of BigCat given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BigCat
-  * @throws IOException if the JSON string is invalid with respect to BigCat
-  */
+  /**
+   * Create an instance of BigCat given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BigCat
+   * @throws IOException if the JSON string is invalid with respect to BigCat
+   */
   public static BigCat fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BigCat.class);
   }
 
- /**
-  * Convert an instance of BigCat to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BigCat to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

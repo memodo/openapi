@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelApiResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0-SNAPSHOT")
 public class ModelApiResponse implements Parcelable {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -69,20 +69,18 @@ public class ModelApiResponse implements Parcelable {
   }
 
   public ModelApiResponse code(Integer code) {
-    
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Get code
    * @return code
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getCode() {
     return code;
   }
-
 
   public void setCode(Integer code) {
     this.code = code;
@@ -90,20 +88,18 @@ public class ModelApiResponse implements Parcelable {
 
 
   public ModelApiResponse type(String type) {
-    
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   public String getType() {
     return type;
   }
-
 
   public void setType(String type) {
     this.type = type;
@@ -111,20 +107,18 @@ public class ModelApiResponse implements Parcelable {
 
 
   public ModelApiResponse message(String message) {
-    
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * Get message
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
   public String getMessage() {
     return message;
   }
-
 
   public void setMessage(String message) {
     this.message = message;
@@ -213,12 +207,12 @@ public class ModelApiResponse implements Parcelable {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ModelApiResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ModelApiResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelApiResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -271,22 +265,22 @@ public class ModelApiResponse implements Parcelable {
     }
   }
 
- /**
-  * Create an instance of ModelApiResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ModelApiResponse
-  * @throws IOException if the JSON string is invalid with respect to ModelApiResponse
-  */
+  /**
+   * Create an instance of ModelApiResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ModelApiResponse
+   * @throws IOException if the JSON string is invalid with respect to ModelApiResponse
+   */
   public static ModelApiResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ModelApiResponse.class);
   }
 
- /**
-  * Convert an instance of ModelApiResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ModelApiResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

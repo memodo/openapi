@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Tag
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0-SNAPSHOT")
 public class Tag implements Parcelable {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -65,20 +65,18 @@ public class Tag implements Parcelable {
   }
 
   public Tag id(Long id) {
-    
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public Long getId() {
     return id;
   }
-
 
   public void setId(Long id) {
     this.id = id;
@@ -86,20 +84,18 @@ public class Tag implements Parcelable {
 
 
   public Tag name(String name) {
-    
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
-
 
   public void setName(String name) {
     this.name = name;
@@ -183,12 +179,12 @@ public class Tag implements Parcelable {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Tag
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Tag
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Tag.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -238,22 +234,22 @@ public class Tag implements Parcelable {
     }
   }
 
- /**
-  * Create an instance of Tag given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Tag
-  * @throws IOException if the JSON string is invalid with respect to Tag
-  */
+  /**
+   * Create an instance of Tag given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Tag
+   * @throws IOException if the JSON string is invalid with respect to Tag
+   */
   public static Tag fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Tag.class);
   }
 
- /**
-  * Convert an instance of Tag to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Tag to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

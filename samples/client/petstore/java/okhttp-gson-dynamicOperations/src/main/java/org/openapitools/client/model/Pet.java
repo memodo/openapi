@@ -55,7 +55,7 @@ import org.openapitools.client.JSON;
 /**
  * Pet
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0-SNAPSHOT")
 public class Pet {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -75,7 +75,7 @@ public class Pet {
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  private List<Tag> tags;
+  private List<Tag> tags = new ArrayList<>();
 
   /**
    * pet status in the store
@@ -124,6 +124,11 @@ public class Pet {
         return StatusEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StatusEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_STATUS = "status";
@@ -134,20 +139,18 @@ public class Pet {
   }
 
   public Pet id(Long id) {
-    
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public Long getId() {
     return id;
   }
-
 
   public void setId(Long id) {
     this.id = id;
@@ -155,20 +158,18 @@ public class Pet {
 
 
   public Pet category(Category category) {
-    
     this.category = category;
     return this;
   }
 
-   /**
+  /**
    * Get category
    * @return category
-  **/
+   */
   @javax.annotation.Nullable
   public Category getCategory() {
     return category;
   }
-
 
   public void setCategory(Category category) {
     this.category = category;
@@ -176,20 +177,18 @@ public class Pet {
 
 
   public Pet name(String name) {
-    
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
-
 
   public void setName(String name) {
     this.name = name;
@@ -197,7 +196,6 @@ public class Pet {
 
 
   public Pet photoUrls(Set<String> photoUrls) {
-    
     this.photoUrls = photoUrls;
     return this;
   }
@@ -210,15 +208,14 @@ public class Pet {
     return this;
   }
 
-   /**
+  /**
    * Get photoUrls
    * @return photoUrls
-  **/
+   */
   @javax.annotation.Nonnull
   public Set<String> getPhotoUrls() {
     return photoUrls;
   }
-
 
   public void setPhotoUrls(Set<String> photoUrls) {
     this.photoUrls = photoUrls;
@@ -226,7 +223,6 @@ public class Pet {
 
 
   public Pet tags(List<Tag> tags) {
-    
     this.tags = tags;
     return this;
   }
@@ -239,15 +235,14 @@ public class Pet {
     return this;
   }
 
-   /**
+  /**
    * Get tags
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<Tag> getTags() {
     return tags;
   }
-
 
   public void setTags(List<Tag> tags) {
     this.tags = tags;
@@ -255,20 +250,18 @@ public class Pet {
 
 
   public Pet status(StatusEnum status) {
-    
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * pet status in the store
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
-
 
   public void setStatus(StatusEnum status) {
     this.status = status;
@@ -343,12 +336,12 @@ public class Pet {
     openapiRequiredFields.add("photoUrls");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Pet
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Pet
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Pet.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -401,6 +394,10 @@ public class Pet {
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        StatusEnum.validateJsonElement(jsonObj.get("status"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -432,22 +429,22 @@ public class Pet {
     }
   }
 
- /**
-  * Create an instance of Pet given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Pet
-  * @throws IOException if the JSON string is invalid with respect to Pet
-  */
+  /**
+   * Create an instance of Pet given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Pet
+   * @throws IOException if the JSON string is invalid with respect to Pet
+   */
   public static Pet fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Pet.class);
   }
 
- /**
-  * Convert an instance of Pet to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Pet to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
